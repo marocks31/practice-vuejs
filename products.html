@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Practice Vue.js</title>
+    <script src="https://unpkg.com/vue@next"></script>></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="products.js" defer></script>
+  </head>
+  <body>
+    <h1>Tiny Toys Thrift</h1>
+    <div id="app">
+      {{ message }}
+      <div>
+        <button v-on:click="showAbout = !showAbout">Toggle About</button>
+
+        <p v-if="showAbout">
+          We are a tiny toy thrift shop for all ages located in Chicago, Illinois. 100% of our products are donated and proceeds go to funding summer camp for local kids! Our donation hours are M-Sa 7:00 AM to 4:00 PM 543 W. Huron Street. 
+        </p>
+        <p v-else></p>
+           </div>
+           <h3>We have an influx of stock lately! If you are looking for something chances are, it's in our warehouse. Add your request to this list and we will make sure it gets on the floor within 24 hours!</h3>
+           <h2>Requested (count: {{toys.length }})></h2>
+           <p v-for="toy in toys"> {{toys}}</p>
+           <input type="text" v-model="newToys">
+           <button v-on:click="addNewToys()">Add a request!</button>
+      
+
+      <button v-on:click="indexProduct">Get products</button>
+
+
+    </div>
+  </body>
+</html>
